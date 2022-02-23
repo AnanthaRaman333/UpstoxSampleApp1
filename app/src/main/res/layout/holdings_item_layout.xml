@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="holdings"
+            type="com.example.upstoxholding.ui.main.model.repo.db.HoldingsEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        
+        <TextView
+            android:id="@+id/symbolname_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@{holdings.symbol}"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BANDHANBBNK" />
+
+        <TextView
+            android:id="@+id/qty_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@{String.valueOf(holdings.quantity)}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/symbolname_textView"
+            tools:text="575" />
+
+        <TextView
+            android:id="@+id/ltp_key_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/ltp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/ltp_value_textView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="255dp"
+            tools:text="LTP:" />
+
+        <TextView
+            android:id="@+id/pl_key_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/pl"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/pl_value_textView"
+            app:layout_constraintTop_toBottomOf="@+id/ltp_key_textView"
+            tools:layout_editor_absoluteX="256dp"
+            tools:text="P/L:" />
+
+        <TextView
+            android:id="@+id/ltp_value_textView"
+            last_trade_price="@{holdings}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="333dp"
+            tools:layout_editor_absoluteY="35dp"
+            tools:text="₹100.5" />
+
+        <TextView
+            android:id="@+id/pl_value_textView"
+            profit_loss="@{holdings}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ltp_value_textView"
+            tools:layout_editor_absoluteX="334dp"
+            tools:layout_editor_absoluteY="67dp"
+            tools:text="₹4243.50" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Upstox Holding</string>
+    <string name="profit_and_loss">Profit &amp; Loss</string>
+    <string name="ltp">LTP:</string>
+    <string name="pl">p/L:</string>
+    <string name="current_value">Current Value:</string>
+    <string name="total_investment">Total Investment:</string>
+    <string name="TodayPL">Today Profit &amp; Loss:</string>
+
+</resources>
